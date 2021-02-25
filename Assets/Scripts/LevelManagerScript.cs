@@ -28,16 +28,8 @@ public class LevelManagerScript : MonoBehaviour
     }
     public void Switch()
     {
-        isTilemapA = !isTilemapA;
-        if (isTilemapA == true)
-        {
-            tileMapA.SetActive(true);
-            tileMapB.SetActive(false);
-        }
-        else
-        {
-            tileMapA.SetActive(false);
-            tileMapB.SetActive(true);
-        }
+        isTilemapA = !isTilemapA;     
+        tileMapA.SetActive(isTilemapA);
+        tileMapB.SetActive(!isTilemapA);
     }
 }
