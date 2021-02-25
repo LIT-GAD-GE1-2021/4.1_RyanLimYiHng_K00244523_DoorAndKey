@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class SwitchTile : MonoBehaviour
 {
-    public GameObject doorOpen;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +16,9 @@ public class DoorController : MonoBehaviour
         
     }
 
-    public void DoorOpen()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject.Instantiate(doorOpen);
-        Destroy(this.gameObject);
+        LevelManagerScript.instance.Switch();
     }
+
 }
